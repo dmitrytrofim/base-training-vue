@@ -1,12 +1,18 @@
 <template>
   <div class="text-[50px]">
-    <h1>{{ store.count }}</h1>
-    <button @click="store.increment">Click me!</button>
+    <div class="">
+      <RouterLink to="/">home</RouterLink>
+      <RouterLink to="/about">about</RouterLink>
+    </div>
+    <div class="">
+      <RouterView />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useCounterStore } from '@/store/index'
+import { RouterLink } from 'vue-router'
 
 const store = useCounterStore()
 </script>
