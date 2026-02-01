@@ -1,11 +1,14 @@
-<script setup lang="ts"></script>
-
 <template>
-  <h1 class="bg-amber-600 text-green-400">You did it!</h1>
-  <p class="test">
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="text-[50px]">
+    <h1>{{ store.count }}</h1>
+    <button @click="store.increment">Click me!</button>
+  </div>
 </template>
+
+<script setup lang="ts">
+import { useCounterStore } from '@/store/index'
+
+const store = useCounterStore()
+</script>
 
 <style scoped></style>
